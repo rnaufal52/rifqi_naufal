@@ -1,4 +1,4 @@
-import mdx from "@next/mdx";
+import mdx from '@next/mdx';
 
 const withMDX = mdx({
   extension: /\.mdx?$/,
@@ -7,11 +7,21 @@ const withMDX = mdx({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ["ts", "tsx", "md", "mdx"],
-  transpilePackages: ["next-mdx-remote"],
+  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
+  transpilePackages: ['next-mdx-remote'],
   sassOptions: {
-    compiler: "modern",
-    silenceDeprecations: ["legacy-js-api"],
+    compiler: 'modern',
+    silenceDeprecations: ['legacy-js-api'],
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'pdzzzriinezdvzbarkku.supabase.co',
+        port: '',
+        pathname: '/storage/v1/object/public/**',
+      },
+    ],
   },
 };
 

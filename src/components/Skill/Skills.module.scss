@@ -1,0 +1,16 @@
+.hover {
+  border: 1px solid var(--static-transparent);
+
+  &:hover {
+    border: 1px solid var(--neutral-alpha-medium);
+  }
+}
+
+.image {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: var(--radius-l);
+  transition: var(--transition-micro-medium);
+  transform: scale(1);
+}

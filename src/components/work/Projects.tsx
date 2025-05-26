@@ -81,11 +81,7 @@ export function Projects({ range }: ProjectsProps) {
               `${process.env.NEXT_PUBLIC_SUPABASE_BUCKET}${item.portofolioURL}`,
             ]}
             title={item.portofolioTitle}
-            description={
-              item.portofolioDesc.length > 100
-                ? item.portofolioDesc.slice(0, 100) + '...'
-                : item.portofolioDesc
-            }
+            description={item.portofolioDesc}
             content={item.slug}
             avatars={[]}
             link={item.projectURL || ''}

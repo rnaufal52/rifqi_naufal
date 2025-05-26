@@ -1,23 +1,24 @@
-"use client";
+'use client';
 
-import React, { useEffect } from "react";
-import Link from "next/link";
-import classNames from "classnames";
-import styles from "./Logo.module.scss";
-import { SpacingToken } from "../types";
-import { Flex } from ".";
+import React, { useEffect } from 'react';
+import Link from 'next/link';
+import classNames from 'classnames';
+import styles from './Logo.module.scss';
+import { SpacingToken } from '../types';
+import { Flex } from '.';
+import Image from 'next/image';
 
 const sizeMap: Record<string, SpacingToken> = {
-  xs: "20",
-  s: "24",
-  m: "32",
-  l: "40",
-  xl: "48",
+  xs: '20',
+  s: '24',
+  m: '32',
+  l: '40',
+  xl: '48',
 };
 
 interface LogoProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;
-  size?: "xs" | "s" | "m" | "l" | "xl";
+  size?: 'xs' | 's' | 'm' | 'l' | 'xl';
   style?: React.CSSProperties;
   wordmark?: boolean;
   icon?: boolean;
@@ -27,7 +28,7 @@ interface LogoProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 const Logo: React.FC<LogoProps> = ({
-  size = "m",
+  size = 'm',
   wordmark = true,
   icon = true,
   href,
@@ -40,7 +41,7 @@ const Logo: React.FC<LogoProps> = ({
   useEffect(() => {
     if (!icon && !wordmark) {
       console.warn(
-        "Both 'icon' and 'wordmark' props are set to false. The logo will not render any content.",
+        "Both 'icon' and 'wordmark' props are set to false. The logo will not render any content."
       );
     }
   }, [icon, wordmark]);
@@ -57,12 +58,12 @@ const Logo: React.FC<LogoProps> = ({
       )}
       {iconSrc && (
         // @ts-ignore
-        <img
+        <Image
           style={{
             height: `var(--static-space-${sizeMap[size]})`,
-            width: "auto",
+            width: 'auto',
           }}
-          alt="Trademark"
+          alt='Trademark'
           src={iconSrc}
         />
       )}
@@ -76,12 +77,12 @@ const Logo: React.FC<LogoProps> = ({
       )}
       {wordmarkSrc && (
         // @ts-ignore
-        <img
+        <Image
           style={{
             height: `var(--static-space-${sizeMap[size]})`,
-            width: "auto",
+            width: 'auto',
           }}
-          alt="Trademark"
+          alt='Trademark'
           src={wordmarkSrc}
         />
       )}
@@ -90,10 +91,15 @@ const Logo: React.FC<LogoProps> = ({
 
   return href ? (
     <Link
-      className={classNames("radius-l", "display-flex", "fit-height", className)}
+      className={classNames(
+        'radius-l',
+        'display-flex',
+        'fit-height',
+        className
+      )}
       style={style}
       href={href}
-      aria-label="Trademark"
+      aria-label='Trademark'
       {...props}
     >
       {content}
@@ -101,15 +107,15 @@ const Logo: React.FC<LogoProps> = ({
   ) : (
     <Flex
       className={classNames(className)}
-      radius="l"
+      radius='l'
       fitHeight
       style={style}
-      aria-label="Trademark"
+      aria-label='Trademark'
     >
       {content}
     </Flex>
   );
 };
 
-Logo.displayName = "Logo";
+Logo.displayName = 'Logo';
 export { Logo };

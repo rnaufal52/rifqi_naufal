@@ -1,3 +1,6 @@
+'use client';
+
+import { useState, useEffect } from 'react'; // Import useState dan useEffect
 import {
   Flex,
   IconButton,
@@ -7,11 +10,26 @@ import {
 } from '@/once-ui/components';
 import { social } from '@/app/resources/content';
 import styles from './Footer.module.scss';
-import { getPersonByEmail } from '@/services/getPerson';
-const person = await getPersonByEmail('r.naufal2911@gmail.com');
+import { getPersonByEmail } from '@/services/getPerson'; // Pastikan path ini benar
 
 export const Footer = () => {
+  const [person, setPerson] = useState<any>(null); // Tambahkan state untuk person
   const currentYear = new Date().getFullYear();
+
+  useEffect(() => {
+    // Lakukan fetching data di dalam useEffect
+    const fetchPersonData = async () => {
+      try {
+        const data = await getPersonByEmail('r.naufal2911@gmail.com');
+        setPerson(data);
+      } catch (error) {
+        console.error('Failed to fetch person data:', error);
+        // Handle error, e.g., set person to a default object or show an error message
+      }
+    };
+
+    fetchPersonData();
+  }, []); // Array dependensi kosong berarti efek ini hanya berjalan sekali setelah mount
 
   return (
     <Flex
@@ -32,7 +50,8 @@ export const Footer = () => {
       >
         <Text variant='body-default-s' onBackground='neutral-strong'>
           <Text onBackground='neutral-weak'>© {currentYear} /</Text>
-          <Text paddingX='4'>{person?.name}</Text>
+          <Text paddingX='4'>{person?.name}</Text>{' '}
+          {/* Gunakan person dari state */}
           <Text onBackground='neutral-weak'>
             {/* Usage of this template requires attribution. Please don't remove the link to Once UI. */}
             / Build your portfolio with{' '}

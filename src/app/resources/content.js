@@ -16,12 +16,9 @@ const person = {
 
 const newsletter = {
   display: true,
-  title: <>Have a project idea?</>,
-  description: (
-    <>
-      We are available for new projects, like make api,ui/ux,motion graphic,etc
-    </>
-  ),
+  title: 'Have a project idea?',
+  description:
+    'We are available for new projects, like make api,ui/ux,motion graphic,etc',
 };
 
 const social = [
@@ -53,7 +50,7 @@ const home = {
   path: '/',
   image: '/images/og/home.jpg',
   label: 'Home',
-  title: `${person.name}'s Portfolio`,
+  title: `${person.name}&apos;s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Building bridges between design and code</>,
   featured: {
@@ -67,7 +64,7 @@ const home = {
   },
   subline: (
     <>
-      I'm Selene, a design engineer at{' '}
+      I&apos;m Selene, a design engineer at{' '}
       <Logo
         icon={false}
         style={{ display: 'inline-flex', top: '0.25em', marginLeft: '-0.25em' }}

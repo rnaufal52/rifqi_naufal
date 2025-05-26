@@ -15,8 +15,8 @@ import { usePerson } from '@/hook/usePerson';
 
 type NewsletterProps = {
   display: boolean;
-  title: string | JSX.Element;
-  description: string | JSX.Element;
+  title: string;
+  description: string;
 };
 
 export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {

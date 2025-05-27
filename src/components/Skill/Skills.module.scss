@@ -7,8 +7,8 @@
 }
 
 .image {
-  width: 64px;
-  height: 64px;
+  width: 64px !important;
+  height: 64px !important;
   object-fit: cover;
   border-radius: var(--radius-l);
   transition: var(--transition-micro-medium);

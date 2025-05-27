@@ -28,7 +28,7 @@ export const getStudies = async (): Promise<Study[]> => {
     studyName: item.studies_name,
     studyMajor: item.studies_major,
     studyStartDate: formatYear(item.studies_start),
-    studyFinishDate: formatYear(item.studies_finish),
+    studyFinishDate: formatYear(item.studies_end),
     studyID: item.studies_id,
   }));
 };

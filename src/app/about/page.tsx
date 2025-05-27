@@ -305,7 +305,7 @@ export default function About() {
                         onBackground='neutral-weak'
                       >
                         {institution.studyStartDate} -{' '}
-                        {institution.studyFinishDate ?? 'Present'}
+                        {institution.studyFinishDate ?? ''}
                       </Text>
                     </Flex>
                     <Text

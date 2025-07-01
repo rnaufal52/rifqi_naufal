@@ -17,9 +17,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'drive.google.com',
+        hostname: 'rifqinaufal.vercel.app',
         port: '',
-        pathname: '/file/d/**',
+        pathname: '/public/images/**',
       },
     ],
   },

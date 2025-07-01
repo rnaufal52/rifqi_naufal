@@ -13,16 +13,16 @@ const nextConfig = {
     compiler: 'modern',
     silenceDeprecations: ['legacy-js-api'],
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'rifqinaufal.vercel.app',
-        port: '',
-        pathname: '/public/images/**',
-      },
-    ],
-  },
+  // images: {
+  //   remotePatterns: [
+  //     {
+  //       protocol: 'https',
+  //       hostname: 'rifqinaufal.vercel.app',
+  //       port: '',
+  //       pathname: '/public/images/**',
+  //     },
+  //   ],
+  // },
 };
 
 export default withMDX(nextConfig);

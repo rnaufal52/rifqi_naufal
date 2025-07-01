@@ -17,9 +17,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'pdzzzriinezdvzbarkku.supabase.co',
+        hostname: 'drive.google.com',
         port: '',
-        pathname: '/storage/v1/object/public/**',
+        pathname: '/file/d/**',
       },
     ],
   },

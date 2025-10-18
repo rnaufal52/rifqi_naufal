@@ -30,7 +30,8 @@ export default function Work() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Projects />
+      <Projects itemsPerPage={9} />
     </Column>
   );
 }
+

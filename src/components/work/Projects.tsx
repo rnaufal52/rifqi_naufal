@@ -10,7 +10,7 @@ import { PortofolioType } from '@/types/portofolioType';
 
 interface ProjectsProps {
   range?: [number, number?];
-  itemsPerPage?: number; // Tambah prop untuk custom items per page
+  itemsPerPage?: number;
 }
 
 export function Projects({ range, itemsPerPage = 6 }: ProjectsProps) {
@@ -122,36 +122,38 @@ export function Projects({ range, itemsPerPage = 6 }: ProjectsProps) {
 
           {/* Pagination Controls */}
           {totalPages > 1 && (
-            <Flex gap='8' justify='center' align='center' marginTop='16'>
-              <Button
-                onClick={goToPrevPage}
-                disabled={currentPage === 1}
-                variant='secondary'
-                size='sm'
-              >
-                Previous
-              </Button>
-              
-              {getPageNumbers().map((page) => (
+            <Column gap='8' align='center' marginTop='16'>
+              <Flex gap='8' align='center'>
                 <Button
-                  key={page}
-                  onClick={() => goToPage(page)}
-                  variant={currentPage === page ? 'primary' : 'secondary'}
+                  onClick={goToPrevPage}
+                  disabled={currentPage === 1}
+                  variant='secondary'
                   size='sm'
                 >
-                  {page}
+                  Previous
                 </Button>
-              ))}
-              
-              <Button
-                onClick={goToNextPage}
-                disabled={currentPage === totalPages}
-                variant='secondary'
-                size='sm'
-              >
-                Next
-              </Button>
-            </Flex>
+                
+                {getPageNumbers().map((page) => (
+                  <Button
+                    key={page}
+                    onClick={() => goToPage(page)}
+                    variant={currentPage === page ? 'primary' : 'secondary'}
+                    size='sm'
+                  >
+                    {page}
+                  </Button>
+                ))}
+                
+                <Button
+                  onClick={goToNextPage}
+                  disabled={currentPage === totalPages}
+                  variant='secondary'
+                  size='sm'
+                >
+                  Next
+                </Button>
+              </Flex>
+            </Column>
           )}
         </>
       )}
@@ -176,29 +178,31 @@ export function Projects({ range, itemsPerPage = 6 }: ProjectsProps) {
 
       {/* Pagination di bawah untuk mobile atau alternatif layout */}
       {!range && totalPages > 1 && (
-        <Flex gap='8' justify='center' align='center' marginTop='24'>
-          <Button
-            onClick={goToPrevPage}
-            disabled={currentPage === 1}
-            variant='secondary'
-            size='sm'
-          >
-            Previous
-          </Button>
-          
-          <span style={{ margin: '0 8px' }}>
-            Page {currentPage} of {totalPages}
-          </span>
-          
-          <Button
-            onClick={goToNextPage}
-            disabled={currentPage === totalPages}
-            variant='secondary'
-            size='sm'
-          >
-            Next
-          </Button>
-        </Flex>
+        <Column gap='8' align='center' marginTop='24'>
+          <Flex gap='8' align='center'>
+            <Button
+              onClick={goToPrevPage}
+              disabled={currentPage === 1}
+              variant='secondary'
+              size='sm'
+            >
+              Previous
+            </Button>
+            
+            <Text onBackground='neutral-medium'>
+              Page {currentPage} of {totalPages}
+            </Text>
+            
+            <Button
+              onClick={goToNextPage}
+              disabled={currentPage === totalPages}
+              variant='secondary'
+              size='sm'
+            >
+              Next
+            </Button>
+          </Flex>
+        </Column>
       )}
     </Column>
   );

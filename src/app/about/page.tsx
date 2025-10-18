@@ -28,6 +28,8 @@ const settingWeb = await getSettingWebById(
 const experience = await getExperiences();
 const studies = await getStudies();
 
+export const revalidate = 60;
+
 export async function generateMetadata() {
   return Meta.generate({
     title: about.title,
@@ -324,3 +326,4 @@ export default function About() {
     </Column>
   );
 }
+

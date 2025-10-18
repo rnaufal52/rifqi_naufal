@@ -138,7 +138,6 @@ export default async function Home() {
             columns='3'
             thumbnail={true}
             direction='column'
-            range={[1, 6]}
           />
         </Flex>
       </Flex>
@@ -174,3 +173,4 @@ export default async function Home() {
     </Column>
   );
 }
+

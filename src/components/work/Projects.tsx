@@ -130,7 +130,7 @@ export function Projects({ range }: ProjectsProps) {
 
       {/* --- Komponen Pagination (Hanya muncul jika tidak ada range & total halaman > 1) --- */}
       {!range && totalPages > 1 && (
-        <Flex gap='8' justifyContent='center' marginTop='40'>
+        <Flex gap='8' justify='center' marginTop='40'>
           
           {/* Tombol Sebelumnya */}
           <Button
@@ -186,3 +186,4 @@ export function Projects({ range }: ProjectsProps) {
     </Column>
   );
 }
+

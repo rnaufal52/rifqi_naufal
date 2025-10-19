@@ -2,7 +2,7 @@ import { supabase } from '@/lib/supabaseClient';
 import { Portofolio } from '@/types/portofolio';
 
 export const getPortofolios = async (): Promise<Portofolio[]> => {
-  const { data, error } = await supabase.from('portofolios').select('*');
+  const { data, error } = await supabase.from('portofolios').select('*').order('created_at', { ascending: false });;
 
   if (error) {
     console.error('Error fetching portofolios:', error.message);

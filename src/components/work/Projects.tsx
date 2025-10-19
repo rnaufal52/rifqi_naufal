@@ -90,7 +90,7 @@ export function Projects({ range, itemsPerPage = 6 }: ProjectsProps) {
   // Kalau range ada, ambil portofolio sesuai range tanpa filter & tombol filter
   // Kalau tidak ada range, pakai filter dengan pagination
   const displayed = range
-    ? portofolios.slice(-range[0])
+    ? portofolios.slice(0, range[0])
     : filtered.slice(
         (currentPage - 1) * itemsPerPage,
         currentPage * itemsPerPage
@@ -267,3 +267,4 @@ export function Projects({ range, itemsPerPage = 6 }: ProjectsProps) {
     </Column>
   );
 }
+
